@@ -3,6 +3,8 @@ class Article
   include Mongoid::Timestamps
   include Mongoid::Paranoia
   include Mongoid::Versioning
+  # prove have_include_for any Module 
+  include Math
   
   field :title
   field :content

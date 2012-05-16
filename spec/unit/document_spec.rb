@@ -16,5 +16,6 @@ describe "Document" do
     it { should be_versioned_document }
     it { should be_timestamped_document }
     it { should be_paranoid_document }
+    it { should have_include_for(Math) }
   end
 end

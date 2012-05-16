@@ -70,6 +70,16 @@ RSpec::Matchers.define :have_instance_method do |name|
   end
 end
 
+RSpec::Matchers.define :have_include_for do |_module|
+  match do |doc|
+    doc.class.included_modules.include?(_module)
+  end
+  
+  description do
+    "be a #{_module.name}"
+  end  
+end
+
 RSpec::Matchers.define :be_mongoid_document do
   match do |doc|
     doc.class.included_modules.include?(Mongoid::Document)
